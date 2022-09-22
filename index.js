@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res)=>{
-    res.send({'Hi':  'there'})
+    res.send({'bye':  'tady'})
 })
 
 
