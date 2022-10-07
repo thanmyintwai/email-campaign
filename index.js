@@ -47,9 +47,9 @@ app.use(passport.session())
 })
 ) */
 
-app.get('/', (req, res)=>{
+/* app.get('/', (req, res)=>{
     res.send({'bye':  'tady'})
-})
+}) */
 
 //const authRoutes = require('./routes/authRoutes')
 //authRoutes(app)
