@@ -8,6 +8,7 @@ const User = require('../models/User')
 //generalize token and put it in a cookie 
 //and set it to user
 //user is user model (new or existing) from callback of googlestrategy (look down below)
+//{"_id":"632c5a306fd92a2bfd63a0c0","googleId":"102012197665909713239","credits":0,"__v":0}
 passport.serializeUser((user, done) => {
     done(null, user.id);
   });
