@@ -1,14 +1,20 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
-const billingRoutes = require('./routes/billingRoutes')
 const keys = require('./config/keys');
-const session = require('express-session')
+//const session = require('express-session')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
+require('./models/User')
+require('./models/Survey')
+//no need to import recipient as it is already imported
+//in the sruvey
+//require('./models/Recipient')
 require('./services/passport')
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI)
+
 const app = express()
 
 
@@ -55,6 +61,7 @@ app.use(passport.session())
 //authRoutes(app)
 require('./routes/authRoutes')(app)
 require('./routes/billingRoutes')(app)
+require('./routes/surveyRoutes')(app)
 
 if(process.env.NODE_ENV === 'production'){
    // Express will serve up production assets
